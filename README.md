@@ -37,3 +37,26 @@ Write in the file 0-O, the big O notations of the time complexity of the Bubble 
 * in the best case
 * in the average case
 * in the worst case
+
+	vagrant@/tmp/sort$ gcc -Wall -Wextra -Werror -pedantic 0-bubble_sort.c 0-main.c print_array.c -o bubble
+	vagrant@/tmp/sort$ ./bubble
+
+## Repo:
+
+* GitHub repository: sorting_algorithms
+* File: 0-bubble_sort.c, 0-O
+
+# 1. Insertion sort
+Write a function that sorts a doubly linked list of integers in ascending order using the Insertion sort algorithm
+
+* Prototype: void insertion_sort_list(listint_t **list);
+* You are not allowed to modify the integer n of a node. You have to swap the nodes themselves.
+* You’re expected to print the list after each time you swap two elements (See example below)
+
+	vagrant@/tmp/sort$ gcc -Wall -Wextra -Werror -pedantic 1-main.c 1-insertion_sort_list.c print_list.c -o insertion
+	vagrant@/tmp/sort$ ./insertion
+
+## Repo:
+
+* GitHub repository: sorting_algorithms
+* File: 1-insertion_sort_list.c, 1-O
