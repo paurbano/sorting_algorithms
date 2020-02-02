@@ -1,5 +1,21 @@
 #include "sort.h"
 /**
+ * swap_int - swap two numbers
+ * @a: firts number
+ * @b: second number
+ *
+ * Description: Write a function that swaps the values of two integers
+ */
+void swap_int(int *a, int *b)
+{
+	int x;
+
+	x = *a;
+	*a = *b;
+	*b = x;
+}
+
+/**
  * selection_sort - selection sort algorithm
  *
  * @array: input array
@@ -9,7 +25,9 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t i, j, less;
-	char *str_selection, *filename;
+
+	if (array == NULL || size == 0)
+		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
@@ -26,8 +44,4 @@ void selection_sort(int *array, size_t size)
 			print_array(array, size);
 		}
 	}
-
-	filename = "2-O";
-	str_selection = "O(n^2)\nO(n^2)\nO(n^2)";
-	create_file(filename, str_selection);
 }

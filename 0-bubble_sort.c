@@ -1,4 +1,19 @@
 #include "sort.h"
+/**
+ * swap_int - swap two numbers
+ * @a: firts number
+ * @b: second number
+ *
+ * Description: Write a function that swaps the values of two integers
+ */
+void swap_int(int *a, int *b)
+{
+	int x;
+
+	x = *a;
+	*a = *b;
+	*b = x;
+}
 
 /**
  * bubble_sort - sort by bubble algorithm
@@ -11,7 +26,9 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t i;
 	bool ordered = false;
-	char *str_bubble, *filename;
+
+	if (array == NULL || size == 0)
+		return;
 
 	while (!ordered)
 	{
@@ -27,7 +44,4 @@ void bubble_sort(int *array, size_t size)
 		}
 	}
 
-	filename = "0-O";
-	str_bubble = "O(n)\nO(n^2)\nO(n^2)";
-	create_file(filename, str_bubble);
 }
