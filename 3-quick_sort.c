@@ -1,5 +1,4 @@
 #include "sort.h"
-
 /**
  * swap_int - swap two numbers
  * @a: firts number
@@ -16,7 +15,6 @@ void swap_int(int *a, int *b)
 	*b = x;
 }
 
-
 /**
  * lomuto_part - implements lomuto partition
  * @array: input array
@@ -24,33 +22,31 @@ void swap_int(int *a, int *b)
  * @high: high index array
  * @size: size of array
  *
- * Description: implements lomuto partition
+ * Return: position for next iteration
  */
 int lomuto_part(int *array, int low, int high, size_t size)
 {
-    int pivot = array[high];
-    int j, i = low;
+	int pivot = array[high];
+	int j, i = low;
 
-    for (j = low; j < high; j++)
-    {
-	if (array[j] < pivot)
+	for (j = low; j < high; j++)
 	{
-	    if (i != j)
-	    {
-		swap_int(&array[i], &array[j]);
-		print_array(array, size);
-	    }
-	    i++;
+		if (array[j] < pivot)
+		{
+			if (i != j)
+			{
+				swap_int(&array[i], &array[j]);
+				print_array(array, size);
+			}
+			i++;
+		}
 	}
-    }
-
-    if (i != high)
-    {
-	swap_int(&array[i], &array[high]);
-	print_array(array, size);
-    }
-
-    return(i);
+	if (i != high)
+	{
+		swap_int(&array[i], &array[high]);
+		print_array(array, size);
+	}
+	return (i);
 }
 
 /**
@@ -64,15 +60,15 @@ int lomuto_part(int *array, int low, int high, size_t size)
  */
 void apply_quicksort(int *array, int low, int high, size_t size)
 {
-    int pivot;
+	int pivot;
 
-    if (low < high)
-    {
-	pivot = lomuto_part(array, low, high, size);
+	if (low < high)
+	{
+		pivot = lomuto_part(array, low, high, size);
 
-	apply_quicksort(array, low, pivot - 1, size);
-	apply_quicksort(array, pivot + 1, high, size);
-    }
+		apply_quicksort(array, low, pivot - 1, size);
+		apply_quicksort(array, pivot + 1, high, size);
+	}
 }
 
 /**
@@ -85,10 +81,9 @@ void apply_quicksort(int *array, int low, int high, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
-    int low, high;
+	int low, high;
 
-    low = 0;
-    high = size - 1;
-
-    apply_quicksort(array, low, high, size);
+	low = 0;
+	high = size - 1;
+	apply_quicksort(array, low, high, size);
 }
