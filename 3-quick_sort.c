@@ -29,9 +29,9 @@ int lomuto_part(int *array, int low, int high, size_t size)
 	int pivot = array[high];
 	int j, i = low;
 
-	for (j = low; j <= high; j++)
+	for (j = low; j < high; j++)
 	{
-		if (array[j] < pivot)
+		if (array[j] <= pivot)
 		{
 			if (i != j)
 			{
