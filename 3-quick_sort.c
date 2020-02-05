@@ -29,9 +29,9 @@ int lomuto_part(int *array, int low, int high, size_t size)
 	int pivot = array[high];
 	int j, i = low;
 
-	for (j = low; j <= high; j++)
+	for (j = low; j < high; j++)
 	{
-		if (array[j] < pivot)
+		if (array[j] <= pivot)
 		{
 			if (i != j)
 			{
@@ -81,12 +81,12 @@ void apply_quicksort(int *array, int low, int high, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
-	int low, high;
+	/*int low, high;*/
 
-	if (array == NULL || size == 0 || size == 1)
+	if (array == NULL || size < 2)
 		return;
 
-	low = 0;
-	high = size - 1;
-	apply_quicksort(array, low, high, size);
+	/*low = 0;*/
+	/*high = size - 1;*/
+	apply_quicksort(array, 0, size - 1, size);
 }
