@@ -5,10 +5,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -71,16 +67,15 @@ void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void swap_int(int *a, int *b);
 void swap_sort(listint_t **list, listint_t *ptr, listint_t *tmp);
-int lomuto_part(int *array, int low, int high, size_t size);
-void apply_quicksort(int *array, int low, int high, size_t size);
-int _strlen(char *str);
-int create_file(const char *filename, char *text_content);
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
+int lomuto_part(int *array, int low, int high, size_t size);
+void apply_quicksort(int *array, int low, int high, size_t size);
 void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
+int determines_k(int *array, size_t size);
 void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
